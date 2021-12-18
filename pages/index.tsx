@@ -1,17 +1,11 @@
-import { Container, Box } from '@chakra-ui/react';
+import { HomeComponent } from '../components/organisms/home';
 
 /**
  * Page Component
  * @constructor
  */
 const Page = () => {
-  return (
-    <Container>
-      <Box borderRadius={"lg"}>
-        Thanks for visiting. I&apos;m working as a full-stack developer.
-      </Box>
-    </Container>
-  );
+  return <HomeComponent />
 };
 
 export default Page;
