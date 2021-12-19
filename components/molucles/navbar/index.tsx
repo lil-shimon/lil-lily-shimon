@@ -4,7 +4,7 @@ import { FC } from 'react';
 /**
  * NavbarProps
  */
-interface NavbarProps {
+export interface NavbarProps {
   path: any
 }
 
@@ -13,5 +13,5 @@ interface NavbarProps {
  * @constructor
  */
 export const NavbarComponent: FC<NavbarProps> = ({ path }) => {
-  return <NavbarContainer />
+  return <NavbarContainer path={path}/>
 }

@@ -1,6 +1,8 @@
 import { FC, ReactNode } from 'react';
 import Link from 'next/link';
-import { useColorModeValue, Link as ChakraLink, Box } from '@chakra-ui/react';
+import { useColorModeValue, Link as ChakraLink, Box, Container, Flex, Heading } from '@chakra-ui/react';
+import { NavbarProps as NavbarPresenterProps } from '../index';
+import { LogoComponent } from '../../../atoms/logo';
 
 /**
  * LinkItem Presenter Props
@@ -35,11 +37,20 @@ const LinkItemPresenter: FC<LinkItemPresenterProps> = ({ href, path, children })
  * Navbar Presenter
  * @constructor
  */
-export const NavbarPresenter: FC = () => {
+export const NavbarPresenter: FC<NavbarPresenterProps> = ({ path }) => {
+
+  console.log('path', path);
+
   return (
     <Box position={'fixed'} as={'nav'} w={'100%'} bg={useColorModeValue('#ffffff40', '#20202380')}
          style={{ backdropFilter: 'blur(10px)' }} zIndex={1}>
-      Navbar
+      <Container display={'flex'} p={2} maxW={'container.md'} wrap={'wrap'} align={'center'} justify={'space-between'}>
+        <Flex align={'center'} mr={5}>
+          <Heading as={'h1'} size={'lg'} letterSpacing={'tighter'} >
+            <LogoComponent />
+          </Heading>
+        </Flex>
+      </Container>
     </Box>
   );
 };
