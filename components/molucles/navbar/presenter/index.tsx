@@ -14,6 +14,7 @@ import {
 import { NavbarProps as NavbarPresenterProps } from '../index';
 import { LogoComponent } from '../../../atoms/logo';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { ThemeToggleBtnComponent } from '../../../atoms/themeBtn';
 
 /**
  * LinkItem Presenter Props
@@ -50,8 +51,6 @@ const LinkItemPresenter: FC<LinkItemPresenterProps> = ({ href, path, children })
  */
 export const NavbarPresenter: FC<NavbarPresenterProps> = ({ path }) => {
 
-  console.log('path', path);
-
   return (
     <Box position={'fixed'} as={'nav'} w={'100%'} bg={useColorModeValue('#ffffff40', '#20202380')}
          style={{ backdropFilter: 'blur(10px)' }} zIndex={1}>
@@ -78,6 +77,7 @@ export const NavbarPresenter: FC<NavbarPresenterProps> = ({ path }) => {
         </Stack>
 
         <Box flex={1} align={'right'}>
+          <ThemeToggleBtnComponent />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }} />
           <Menu>
             <MenuButton as={IconButton} icon={<HamburgerIcon />} variant={'outline'} aria-label={'Options'} />
