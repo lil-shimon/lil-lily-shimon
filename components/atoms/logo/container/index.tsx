@@ -6,7 +6,6 @@ import { LogoPresenter } from '../presenter';
  */
 export const LogoContainer = () => {
 
-  /// TODO: impl logo
-  const imgSrc = '';
+  const imgSrc = 'images/top-logo.png'
   return <LogoPresenter imgSrc={imgSrc} />;
 };
