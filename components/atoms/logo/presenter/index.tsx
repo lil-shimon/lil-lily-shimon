@@ -22,12 +22,12 @@ export const LogoPresenter: FC<LogoPresenterProps> = ({ imgSrc }) => {
     <Link href={'/'}>
       <a>
         <span className={classes.logoBox}>
-          <Image src={imgSrc} width={20} height={20} alt={"logo"} />
+          <Image src={imgSrc} width={8} height={8} alt={"logo"} />
           <Text color={useColorModeValue('grey.800', 'whiteAlpha.900')}
                 fontFamily={'M PLUS Rounded 1c'}
                 fontWeight={'bold'}
                 ml={3}>
-            lil shimon
+            shimon
           </Text>
         </span>
       </a>
