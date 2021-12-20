@@ -1,8 +1,7 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 import {
   useColorModeValue,
-  Link as ChakraLink,
   Box,
   Container,
   Flex,
@@ -15,35 +14,7 @@ import { NavbarProps as NavbarPresenterProps } from '../index';
 import { LogoComponent } from '../../../atoms/logo';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { ThemeToggleBtnComponent } from '../../../atoms/themeBtn';
-
-/**
- * LinkItem Presenter Props
- */
-interface LinkItemPresenterProps {
-  href: string,
-  path: string,
-  children: ReactNode
-}
-
-/**
- * LinkItem Presenter
- * @param href
- * @param path
- * @param children
- * @constructor
- */
-const LinkItemPresenter: FC<LinkItemPresenterProps> = ({ href, path, children }) => {
-  const active = path === href;
-  const inactiveColour = useColorModeValue('gray200', 'whiteAlpha.900');
-
-  return (
-    <Link href={href}>
-      <ChakraLink p={2} bg={active ? 'glassTeal' : undefined} color={active ? '#202023' : inactiveColour}>
-        {children}
-      </ChakraLink>
-    </Link>
-  );
-};
+import { LinkItemComponent } from '../../../atoms/linkItem';
 
 /**
  * Navbar Presenter
@@ -68,12 +39,12 @@ export const NavbarPresenter: FC<NavbarPresenterProps> = ({ path }) => {
           flexGlow={1}
           mt={{ base: 4, nmd: 0 }}
         >
-          <LinkItemPresenter href={'/works'} path={path}>
+          <LinkItemComponent href={'/works'} path={path}>
             Works
-          </LinkItemPresenter>
-          <LinkItemPresenter href={'/posts'} path={path}>
+          </LinkItemComponent>
+          <LinkItemComponent href={'/posts'} path={path}>
             Posts
-          </LinkItemPresenter>
+          </LinkItemComponent>
         </Stack>
 
         <Box flex={1} align={'right'}>
