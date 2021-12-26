@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Box, Container, Heading, Image } from '@chakra-ui/react';
+import { Box, Container, Heading, Image, useColorModeValue } from '@chakra-ui/react';
 
 interface HomePresenterProps {
   profileImg: string
@@ -12,7 +12,7 @@ interface HomePresenterProps {
 export const HomePresenter: FC<HomePresenterProps> = ({ profileImg }) => {
   return (
     <Container>
-      <Box borderRadius={'lg'} bg={'red'} p={3} mb={6} align={'center'}>
+      <Box borderRadius={'lg'} bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} align={'center'}>
         Thanks for visiting. I&apos;m working as a full-stack developer.
       </Box>
       <Box display={{ md: 'flex' }}>
