@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Layout } from '../components/layout';
 import theme from '../libs/theme';
+import Fonts from '../components/atoms/fonts';
 
 /**
  * WebsiteProps
@@ -22,6 +23,7 @@ interface WebsiteProps {
 const Website: FC<WebsiteProps> = ({ Component, pageProps, router }) => {
   return (
     <ChakraProvider theme={theme}>
+      <Fonts />
       <Layout router={router}>
         <Component {...pageProps} key={router.route} />
       </Layout>

@@ -6,5 +6,9 @@ import { HomePresenter } from '../presenter';
  * @constructor
  */
 export const HomeContainer: FC = () => {
-  return <HomePresenter />
-}
+
+  /// TODO: square image
+  const profileImg = 'images/profileImg.jpg';
+
+  return <HomePresenter profileImg={profileImg} />;
+};

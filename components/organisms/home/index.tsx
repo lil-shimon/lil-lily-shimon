@@ -6,5 +6,5 @@ import { HomeContainer } from './container';
  * @constructor
  */
 export const HomeComponent: FC = () => {
-  return <HomeContainer />
-}
+  return <HomeContainer />;
+};
